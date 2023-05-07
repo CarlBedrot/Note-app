@@ -38,16 +38,24 @@
 }
 
 .container {
-  max-width: 800px;
+  display: flex;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  flex-direction: row;
 }
 
+.main-content {
+  flex-grow: 1;
+  margin-left: 2rem;
+}
+
+
 h1 {
-  font-family: 'Pacifico' ;
   font-size: 2rem;
   color: #333;
   margin-bottom: 1rem;
+  font-weight: 700px;
 }
 
 

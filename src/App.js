@@ -3,7 +3,8 @@ import NoteList from './components/NoteList/NoteList';
 import './App.css';
 import NoteForm from './components/NoteForm/NoteForm';
 import NoteDetails from './components/NoteDetails/NoteDetails'; 
-import ModalWrapper from './components/ModalWrapper/ModalWrapper'; // Add this import
+import ModalWrapper from './components/ModalWrapper/ModalWrapper'; 
+
 
 
 
@@ -37,7 +38,7 @@ const App = () => {
     const newNote = {
       id: Date.now(),
       title: note.title,
-      content: note.content, // Add this line to include the content
+      content: note.content, 
       date: new Date().toISOString().slice(0, 10),
     };
     setNotes([...notes, newNote]);

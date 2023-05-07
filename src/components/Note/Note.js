@@ -13,6 +13,10 @@ const noteStyles = {
     padding: '1rem',
     marginBottom: '1rem',
   };
+
+
+
+
   const truncateContent = (content, maxLength = 50) => {
     if (content.length <= maxLength) {
       return content;
@@ -22,27 +26,33 @@ const noteStyles = {
 
   const Note = ({ note, onDelete, onEdit, onToggleComplete, onClick }) => {
     
-return (
-    <li style={noteStyles}>
-      <input
-        type="checkbox"
-        checked={note.completed}
-        onChange={() => onToggleComplete(note)}
-      />
+   return (
+  <li style={noteStyles}>
+    <input
+      type="checkbox"
+      checked={note.completed}
+      onChange={() => onToggleComplete(note)}
+    />
+    <div className="note-content-wrapper">
       <h3
         style={{ textDecoration: note.completed ? 'line-through' : 'none' }}
         onClick={() => onClick(note)}
       >
         {note.title}
       </h3>
-      <p>{truncateContent(note.content)}</p> {/* Use truncateContent function here */}
-      <p>{note.date}</p>
-      <div className="note-buttons">
-        <DeleteNoteButton noteId={note.id} onDelete={onDelete} />
-        <button onClick={() => onEdit(note)}>Edit</button>
+      <div className="note-content">
+        <p>{truncateContent(note.content)}</p>
       </div>
-    </li>
-  );
+    </div>
+    <p className="note-date">{note.date}</p> {}
+    <div className="note-buttons">
+      <DeleteNoteButton noteId={note.id} onDelete={onDelete} />
+      <button onClick={() => onEdit(note)}>Edit</button>
+    </div>
+  </li>
+);
+
+      
 };
 
 export default Note;
