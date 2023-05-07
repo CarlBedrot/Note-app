@@ -1,8 +1,16 @@
+// NoteList.js
 import React from 'react';
 import Note from '../Note/Note';
 import './NoteList.css';
 
-const NoteList = ({ notes, searchQuery, onDelete, onEdit, onToggleComplete }) => {
+const NoteList = ({
+  notes,
+  searchQuery,
+  onDelete,
+  onEdit,
+  onToggleComplete,
+  onClick,
+}) => {
   const filteredNotes = notes.filter((note) =>
     note.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -16,6 +24,7 @@ const NoteList = ({ notes, searchQuery, onDelete, onEdit, onToggleComplete }) =>
           onDelete={onDelete}
           onEdit={onEdit}
           onToggleComplete={onToggleComplete}
+          onClick={onClick}
         />
       ))}
     </div>

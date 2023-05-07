@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import NoteList from './components/NoteList/NoteList';
 import './App.css';
 import NoteForm from './components/NoteForm/NoteForm';
+import NoteDetails from './components/NoteDetails/NoteDetails'; 
+import ModalWrapper from './components/ModalWrapper/ModalWrapper'; // Add this import
+
+
 
 const saveNotesToLocalStorage = (notes) => {
   localStorage.setItem('notes', JSON.stringify(notes));
@@ -15,6 +19,8 @@ const loadNotesFromLocalStorage = () => {
 const App = () => {
   const [notes, setNotes] = useState(loadNotesFromLocalStorage());
   const [editingNote, setEditingNote] = useState(null);
+  const [showNoteDetails, setShowNoteDetails] = useState(false);
+  const [selectedNote, setSelectedNote] = useState(null);
 
   useEffect(() => {
     saveNotesToLocalStorage(notes);
@@ -25,10 +31,13 @@ const App = () => {
     setNotes(updatedNotes);
   };
 
+
+
   const handleAddNote = (note) => {
     const newNote = {
       id: Date.now(),
       title: note.title,
+      content: note.content, // Add this line to include the content
       date: new Date().toISOString().slice(0, 10),
     };
     setNotes([...notes, newNote]);
@@ -51,6 +60,14 @@ const App = () => {
       note.id === toggledNote.id ? { ...note, completed: !note.completed } : note
     );
     setNotes(updatedNotes);
+  };
+  const handleNoteClick = (note) => {
+    setSelectedNote(note);
+    setShowNoteDetails(true);
+  };
+
+  const handleCloseNoteDetails = () => {
+    setShowNoteDetails(false);
   };
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -81,7 +98,15 @@ const App = () => {
           onDelete={handleDelete}
           onEdit={handleEdit}
           onToggleComplete={handleToggleComplete}
+          onClick={handleNoteClick}
         />
+        <ModalWrapper isOpen={showNoteDetails} onRequestClose={handleCloseNoteDetails}>
+          <NoteDetails
+            note={selectedNote}
+            onUpdate={handleUpdateNote}
+            onClose={handleCloseNoteDetails}
+          />
+        </ModalWrapper>
       </div>
     </div>
   );

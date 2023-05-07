@@ -1,0 +1,42 @@
+/* src/components/ModalWrapper/ModalWrapper.css */
+.modal-enter {
+    opacity: 0;
+  }
+  
+  .modal-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+  
+  .modal-exit {
+    opacity: 1;
+  }
+  
+  .modal-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+  
+  .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 4px;
+    padding: 2rem;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    outline: none;
+  }
+  

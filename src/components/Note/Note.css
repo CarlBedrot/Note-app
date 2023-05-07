@@ -1,0 +1,9 @@
+input[type='checkbox'] {
+    margin-right: 10px;
+  }
+
+.note-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  

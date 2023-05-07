@@ -97,3 +97,14 @@ button {
 button:hover {
   background-color: #4db3d9;
 }
+
+.note-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.note-content {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
