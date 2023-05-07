@@ -38,11 +38,12 @@
 }
 
 .container {
-  display: flex;
-  max-width: 1200px;
+  display: center;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
   flex-direction: row;
+
 }
 
 .main-content {
@@ -55,7 +56,7 @@ h1 {
   font-size: 2rem;
   color: #333;
   margin-bottom: 1rem;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 
