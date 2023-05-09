@@ -1,5 +1,9 @@
 import React from 'react';
 import './Sidebar.css';
+// Sidebar component for displaying categorized notes
+// Accepts the following props:
+// - notes: an array of note objects
+// - onNoteClick: a function to handle clicking on a note
 
 const Sidebar = ({ notes, onNoteClick }) => {
   const categorizedNotes = {

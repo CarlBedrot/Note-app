@@ -1,4 +1,4 @@
-// src/components/ModalWrapper/ModalWrapper.js
+// This component renders a generic modal overlay.
 import React from 'react';
 import ReactModal from 'react-modal';
 import { CSSTransition } from 'react-transition-group';

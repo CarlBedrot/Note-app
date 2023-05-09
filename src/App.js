@@ -4,8 +4,7 @@ import './App.css';
 import NoteForm from './components/NoteForm/NoteForm';
 import NoteDetails from './components/NoteDetails/NoteDetails'; 
 import ModalWrapper from './components/ModalWrapper/ModalWrapper'; 
-
-
+import Sidebar from './components/Sidebar/Sidebar';
 
 
 const saveNotesToLocalStorage = (notes) => {
@@ -79,6 +78,7 @@ const App = () => {
 
   return (
     <div className="container">
+          <Sidebar notes={notes} onNoteClick={handleNoteClick} />
       <div>
         <h1>Note App</h1>
         <input

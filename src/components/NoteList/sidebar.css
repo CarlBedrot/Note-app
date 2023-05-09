@@ -3,18 +3,19 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 200px;
-    background-color: #080808;
+    width: 100px;
+    background-color: #0a0a0a;
     overflow-y: auto;
   }
   
   
   .sidebar h2 {
-    color: rgb(239, 232, 232);
+    color: rgb(255, 255, 255);
     font-size: 1 rem;
     margin-bottom: 0.5rem;
     padding-left: 50px;
     text-decoration: underline;
+    font-weight: 700px;
   }
   
   .sidebar ul {

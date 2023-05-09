@@ -4,6 +4,17 @@ import Note from '../Note/Note';
 import './NoteList.css';
 import './sidebar.css';
 
+// NoteList component for displaying a list of notes
+// Accepts the following props:
+// - notes: an array of note objects
+// - searchQuery: a string used to filter notes by title
+// - onDelete: a function to handle deleting a note
+// - onEdit: a function to handle editing a note
+// - onToggleComplete: a function to handle toggling a note's completed status
+// - onClick: a function to handle clicking on a note
+
+
+  // Categorizes notes by their date
 const categorizeNotes = (notes) => {
   const categorizedNotes = {};
 
@@ -29,8 +40,10 @@ const NoteList = ({
   const filteredNotes = notes.filter((note) =>
     note.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
   const categorizedNotes = categorizeNotes(filteredNotes);
 
+    // Render the NoteList component
   return (
     <div className="note-list-container">
       <div className="sidebar">

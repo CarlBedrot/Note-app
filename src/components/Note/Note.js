@@ -16,14 +16,21 @@ const noteStyles = {
 
 
 
-
+// Truncate content if it exceeds the specified maxLength.
+// Returns a truncated string with '...' at the end.
   const truncateContent = (content, maxLength = 50) => {
     if (content.length <= maxLength) {
       return content;
     }
     return content.slice(0, maxLength) + '...';
   };
-
+// Note component that displays a single note
+// Accepts the following props:
+// - note: an object containing the note's data (id, title, content, date, completed)
+// - onDelete: a function to handle deleting the note
+// - onEdit: a function to handle editing the note
+// - onToggleComplete: a function to handle toggling the note's completed status
+// - onClick: a function to handle clicking on the note's title
   const Note = ({ note, onDelete, onEdit, onToggleComplete, onClick }) => {
     
    return (
